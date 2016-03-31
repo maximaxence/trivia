@@ -118,16 +118,29 @@ namespace UglyTrivia
 
         private String currentCategory()
         {
-            if (players[currentPlayer].Place == 0) return "Pop";
-            if (players[currentPlayer].Place == 4) return "Pop";
-            if (players[currentPlayer].Place == 8) return "Pop";
-            if (players[currentPlayer].Place == 1) return "Science";
-            if (players[currentPlayer].Place == 5) return "Science";
-            if (players[currentPlayer].Place == 9) return "Science";
-            if (players[currentPlayer].Place == 2) return "Sports";
-            if (players[currentPlayer].Place == 6) return "Sports";
-            if (players[currentPlayer].Place == 10) return "Sports";
-            return "Rock";
+            switch (players[currentPlayer].Place)
+            {
+                case 0:
+                    return "Pop";
+                case 4:
+                    return "Pop";
+                case 8:
+                    return "Pop";
+                case 1:
+                    return "Science";
+                case 5:
+                    return "Science";
+                case 9:
+                    return "Science";
+                case 2:
+                    return "Sports";
+                case 6:
+                    return "Sports";
+                case 10:
+                    return "Sports";
+                default:
+                    return "Rock";
+            }
         }
 
         public bool wasCorrectlyAnswered()
@@ -155,8 +168,6 @@ namespace UglyTrivia
                     if (currentPlayer == players.Count) currentPlayer = 0;
                     return true;
                 }
-
-
 
             }
             else
