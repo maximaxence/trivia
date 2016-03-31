@@ -16,6 +16,17 @@ namespace UglyTrivia
         public int Purse { get; private set; }
         public int Place { get; private set; }
 
+        public void MovePlace(int roll)
+        {
+            Place += roll;
+            if (Place > 11) Place = Place - 12;
+        }
+
+        public void AddPurse()
+        {
+            Purse++;
+        }
+
         public class Players
         {
             List<Player> players = new List<Player>();
